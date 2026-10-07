@@ -1,0 +1,9 @@
+$kind: http-request
+url: http://localhost:8000/api/v1/user/verify
+method: POST
+headers:
+  Authorization: "{{bearer_token_0aw9}}"
+body:
+  type: json
+  content: ""
+order: 3000

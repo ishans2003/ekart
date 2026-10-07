@@ -1,0 +1,6 @@
+name: ekart
+values:
+  - key: accessToken
+    value: ''
+  - key: refreshToken
+    value: ''

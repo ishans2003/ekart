@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Build output
+dist/
+frontend/dist/
+
+# Local logs and editor files
+*.log
+.vscode/
+.idea/

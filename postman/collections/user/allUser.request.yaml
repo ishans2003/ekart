@@ -1,0 +1,6 @@
+$kind: http-request
+url: http://localhost:8000/api/v1/user/all-user
+method: GET
+headers:
+  Authorization: Bearer {{accessToken}}
+order: 4503565293736449

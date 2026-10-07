@@ -1,0 +1,27 @@
+$kind: http-request
+url: http://localhost:8000/api/v1/user/login
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "email":"kumarishans2002@gmail.com",
+        "password":"Ishans123"
+    }
+scripts:
+  - type: afterResponse
+    code: "var jsonData = pm.response.json();\r
+
+      if(jsonData.accessToken){\r
+
+      \    pm.environment.set(\"accessToken\", jsonData.accessToken);\r
+
+      }\r
+
+      if (jsonData.refreshToken) {\r
+
+      \    pm.environment.set(\"refreshToken\", jsonData.refreshToken);\r
+
+      }"
+    language: text/javascript
+order: 4376922623280079

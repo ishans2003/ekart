@@ -1,0 +1,11 @@
+$kind: http-request
+url: http://localhost:8000/api/v1/user/reverify
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"email\":\"kumarishans2002@gmail.com\"\r
+
+    }"
+order: 3357507458171642

@@ -1,0 +1,7 @@
+$kind: http-request
+url: http://localhost:8000/api/v1/user/verify-otp/kumarishans2002@gmail.com
+method: POST
+body:
+  type: json
+  content: "{\r\n    \"otp\":\"283076\"\r\n}"
+order: 4496434648211454
