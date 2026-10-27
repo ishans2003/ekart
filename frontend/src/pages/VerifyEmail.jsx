@@ -17,6 +17,8 @@ const VerifyEmail = () => {
                 if (response.data.success) {
                     setStatus("Email verified successfully! You can now log in.");
                     redirectTimer = setTimeout(() => navigate("/login"), 3000);
+                } else {
+                    setStatus(response.data.message || "Email verification failed. Please request a new verification email.");
                 }
             } catch (error) {
                 if (!isActive) return;

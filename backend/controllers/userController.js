@@ -89,6 +89,12 @@ export const verify = async(req,res)=>{
                 message:'User not found'
             })
         }
+        if(user.isVerified || user.token !== token){
+            return res.status(400).json({
+                success:false,
+                message:'This verification link is invalid or has already been used. Request a new link.'
+            })
+        }
         user.token = null
         user.isVerified = true
         await user.save()

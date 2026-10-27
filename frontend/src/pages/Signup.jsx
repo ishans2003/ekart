@@ -27,7 +27,7 @@ const Signup = () => {
       const response = await userApi.post("/register", formData);
 
       if (response.data.success) {
-        navigate("/verify");
+        navigate("/verify", { state: { email: formData.email.trim() } });
         toast.success(response.data.message);
       } else {
         toast.error(response.data.message || "Failed to create account");
