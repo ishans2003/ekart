@@ -41,6 +41,8 @@ app.get("/", (_req, res) => {
 
 app.use('/api/v1/user',userRoute)
 
+export default app;
+
 //http://localhost:8000/api/v1/user/register
 const startServer = async () => {
   try {
@@ -54,4 +56,4 @@ const startServer = async () => {
   }
 };
 
-startServer();
+if (!process.env.VERCEL) startServer();
