@@ -1,4 +1,5 @@
 import express from "express";
+import mongoose from "mongoose";
 import connectDB from "./database/db.js";
 import cors from "cors";
 import userRoute from "./routes/userRoute.js"
@@ -26,6 +27,17 @@ app.use(cors({
   credentials: true, // Allow credentials (cookies, authorization headers, etc.)
 }));
 app.use(express.json());
+
+app.get("/", (_req, res) => {
+  const databaseConnected = mongoose.connection.readyState === 1;
+  res.status(databaseConnected ? 200 : 503).json({
+    success: databaseConnected,
+    message: databaseConnected
+      ? "Server is running and connected to the database."
+      : "Server is running, but the database is not connected.",
+    database: databaseConnected ? "connected" : "disconnected",
+  });
+});
 
 app.use('/api/v1/user',userRoute)
 
